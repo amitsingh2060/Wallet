@@ -7,7 +7,7 @@ class SpendFund extends Component {
     super(props);
     this.state = {
       id: "",
-      amount: 0,
+      amount: "",
     };
   }
 
@@ -26,6 +26,9 @@ class SpendFund extends Component {
       amount: parseInt(this.state.amount),
     };
     this.props.spendFund(obj);
+    
+    this.state.amount = "";
+    this.setState(this.state);
   };
 
   render() {
@@ -40,13 +43,13 @@ class SpendFund extends Component {
               return <option value={item.id}>{item.name}</option>;
             })}
         </select><br/><br/>
-        {this.props.balance && (
+        {this.state.id && (
           <div>
             <div>
               <label>Amount : </label>
               <input
                 type="text"
-                value={this.state.value}
+                value={this.state.amount}
                 onChange={(e) =>
                   this.handleStateChange("amount", e.target.value)
                 }

@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { getAllWallet, checkBalance, addFund } from "../actions/ActionCard";
+import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import { getAllWallet, checkBalance, addFund } from '../actions/ActionCard';
 
 class AddFund extends Component {
   constructor(props) {
     super(props);
     this.state = {
       id: "",
-      amount: 0,
+      amount: "",
     };
   }
   getBalacefrmId = (value) => {
@@ -25,6 +25,9 @@ class AddFund extends Component {
       amount: parseInt(this.state.amount),
     };
     this.props.addFund(obj);
+
+    this.state.amount = "";
+    this.setState(this.state);
   };
 
   render() {
@@ -38,20 +41,27 @@ class AddFund extends Component {
             this.props.WalletList.map((item) => {
               return <option value={item.id}>{item.name}</option>;
             })}
-        </select><br/><br/>
-        {this.props.balance && (
+        </select>
+        <br />
+        <br />
+        {this.state.id && (
           <div>
             <div>
               <label>Amount : </label>
               <input
                 type="text"
-                value={this.state.value}
-                onChange={(e) => this.handleStateChange("amount", e.target.value)}/>
-            </div><br/>
+                value={this.state.amount}
+                onChange={(e) =>
+                  this.handleStateChange("amount", e.target.value)
+                }
+              />
+            </div>
+            <br />
             <input
               type="button"
               value="Add Fund"
-              onClick={() => this.addFund()}/>
+              onClick={() => this.addFund()}
+            />
           </div>
         )}
       </div>
@@ -79,4 +89,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddFund);
+export default connect(mapStateToProps, mapDispatchToProps)(AddFund)

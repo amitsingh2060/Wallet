@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getAllWallet } from "../actions/ActionCard";
 
-class WalletsList extends Component {
+class WallestsList extends Component {
   
 
   render() {
@@ -45,4 +45,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(WalletsList);
+export default connect(mapStateToProps, mapDispatchToProps)(WallestsList);

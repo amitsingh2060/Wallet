@@ -24,39 +24,54 @@ class NewWallet extends Component {
       balance: this.state.balance,
     };
     this.props.addWallet(obj);
+
+    this.state.name = "";
+    this.state.phone = "";
+    this.state.balance = "";
+    this.setState(this.state);
   };
 
   render() {
     return (
       <div>
         <h2>New Wallet</h2>
-
-        <label>Name : </label>
+        <div>
+          <label>Name: </label>
+          <br />
+          <input
+            type="text"
+            value={this.state.name}
+            onChange={(e) => this.handleStateChange("name", e.target.value)}
+          />
+        </div>
         <br />
-        <input
-          type="text"
-          onChange={(e) => this.handleStateChange("name", e.target.value)}
-        />
+        <div>
+          <label>Phone: </label>
+          <br />
+          <input
+            type="text"
+            value={this.state.phone}
+            onChange={(e) => this.handleStateChange("phone", e.target.value)}
+          />
+        </div>
         <br />
-
-        <label>Phone : </label>
-        <br />
-        <input
-          type="text"
-          onChange={(e) => this.handleStateChange("phone", e.target.value)}
-        />
-        <br />
-
-        <label>Balance : </label>
-        <br />
-        <input
-          type="text"
-          onChange={(e) => this.handleStateChange("balance", e.target.value)}
-        />
-        <br />
-        <br />
-
-        <input type="button" value="Submit" onClick={() => this.addWallet()} />
+        <div>
+          <label>Balance: </label>
+          <br />
+          <input
+            type="text"
+            value={this.state.balance}
+            onChange={(e) => this.handleStateChange("balance", e.target.value)}
+          />
+        </div>
+        <div>
+          <br />
+          <input
+            type="button"
+            value="Submit"
+            onClick={() => this.addWallet()}
+          />
+        </div>
       </div>
     );
   }

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import styled from "styled-components";
 import AddFund from "./components/AddFund";
 import AllTrans from "./components/AllTrans";
-import CheckBalance from "./components/CheckBalance";
+import CheckBalanc from "./components/CheckBalanc";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
 import NewWallet from "./components/NewWallet";
@@ -21,7 +21,7 @@ function App() {
             <Switch>
               <Route exact path="/" component={WallestsList} />
               <Route path="/user" component={NewWallet} />
-              <Route path="/checkbalance" component={CheckBalance}/>
+              <Route path="/checkbalance" component={CheckBalanc}/>
               <Route path="/addfund" component={AddFund} />
               <Route path="/spendfund" component={SpendFund} />
               <Route path="/alltransction" component={AllTrans} /> 
