@@ -32,7 +32,7 @@ import {
     }
     //check balance using user id
     if (action.type === CHECK_BALANCE) {
-      let objWallet = state.arrWallet.filter((x) => x.id == action.id)[0];
+      let objWallet = state.arrWallet.filter((x) => x.id === action.id)[0];
       return {
         ...state,
         objWallet: objWallet ? objWallet.balance : 0,
@@ -41,7 +41,7 @@ import {
   
     // add fund using user id
     if (action.type === ADD_FUND) {
-      let index = state.arrWallet.findIndex((x) => x.id == action.obj.id);
+      let index = state.arrWallet.findIndex((x) => x.id === action.obj.id);
       if (state.arrWallet[index]) {
         state.arrWallet[index].balance =
           parseInt(state.arrWallet[index].balance) + action.obj.amount;
@@ -62,7 +62,7 @@ import {
   
     //spend fund using user id
     if (action.type === SPEND_FUND) {
-      let index = state.arrWallet.findIndex((x) => x.id == action.obj.id);
+      let index = state.arrWallet.findIndex((x) => x.id === action.obj.id);
       if (state.arrWallet[index]) {
         state.arrWallet[index].balance =
           parseInt(state.arrWallet[index].balance) - action.obj.amount;

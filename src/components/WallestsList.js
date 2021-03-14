@@ -3,9 +3,7 @@ import { connect } from "react-redux";
 import { getAllWallet } from "../actions/ActionCard";
 
 class WalletsList extends Component {
-  constructor(props) {
-    super(props);
-  }
+  
 
   render() {
     return (
