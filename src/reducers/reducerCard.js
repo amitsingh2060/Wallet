@@ -9,8 +9,10 @@ import {
   
   const initState = {
     arrWallet: [
-      { id: "85", name: "Name 1", phone: "9988999877", balance: "800" },
-      { id: "86", name: "Name 2", phone: "7763423688", balance: "900" },
+      { id: "85", name: "Name 1", phone: "9988999877", balance: "2500" },
+      { id: "86", name: "Name 2", phone: "7763423688", balance: "2100" },
+      { id: "87", name: "Name 3", phone: "9998881122", balance: "3500" },
+      { id: "88", name: "Name 4", phone: "6667771119", balance: "500" },
     ],
     arrTrans: [],
   };
