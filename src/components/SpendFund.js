@@ -26,9 +26,6 @@ class SpendFund extends Component {
       amount: parseInt(this.state.amount),
     };
     this.props.spendFund(obj);
-    
-    this.state.amount = "";
-    this.setState(this.state);
   };
 
   render() {

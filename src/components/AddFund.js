@@ -25,9 +25,6 @@ class AddFund extends Component {
       amount: parseInt(this.state.amount),
     };
     this.props.addFund(obj);
-
-    this.state.amount = "";
-    this.setState(this.state);
   };
 
   render() {

@@ -24,11 +24,6 @@ class NewWallet extends Component {
       balance: this.state.balance,
     };
     this.props.addWallet(obj);
-
-    this.state.name = "";
-    this.state.phone = "";
-    this.state.balance = "";
-    this.setState(this.state);
   };
 
   render() {
