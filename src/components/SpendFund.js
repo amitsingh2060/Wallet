@@ -2,14 +2,19 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getAllWallet, checkBalance, spendFund } from "../actions/ActionCard";
 
+const initial = {
+  id: '',
+  amount: ''
+}
 class SpendFund extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      id: "",
-      amount: "",
-    };
-  }
+  state = initial
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     id: "",
+  //     amount: "",
+  //   };
+  // }
 
   getBalacefrmId = (value) => {
     this.setState({ id: value });
@@ -26,6 +31,7 @@ class SpendFund extends Component {
       amount: parseInt(this.state.amount),
     };
     this.props.spendFund(obj);
+    this.setState(initial)
   };
 
   render() {
@@ -39,7 +45,7 @@ class SpendFund extends Component {
             this.props.WalletList.map((item) => {
               return <option value={item.id}>{item.name}</option>;
             })}
-        </select><br/><br/>
+        </select><br /><br />
         {this.state.id && (
           <div>
             <div>
@@ -51,7 +57,7 @@ class SpendFund extends Component {
                   this.handleStateChange("amount", e.target.value)
                 }
               />
-            </div><br/>
+            </div><br />
             <input
               type="button"
               value="Spend Fund"
